@@ -239,7 +239,7 @@ class gDateTime(Gregorian):
     '''
     parselist = [ (None,'dateTime') ]
     lex_pattern = re.compile('^' r'(?P<neg>-?)' \
-                        '(?P<Y>\d{4,})-' r'(?P<M>\d\d)-' r'(?P<D>\d\d)' 'T' \
+                        r'(?P<Y>\d{4,})-' r'(?P<M>\d\d)-' r'(?P<D>\d\d)' 'T' \
                         r'(?P<h>\d\d):' r'(?P<m>\d\d):' r'(?P<s>\d*(\.\d+)?)' \
                         r'(?P<tz>(Z|([-+]\d\d:\d\d))?)' '$')
     tag, format = 'dateTime', '%(Y)04d-%(M)02d-%(D)02dT%(h)02d:%(m)02d:%(s)02dZ'
@@ -251,7 +251,7 @@ class gDate(Gregorian):
     '''
     parselist = [ (None,'date') ]
     lex_pattern = re.compile('^' r'(?P<neg>-?)' \
-                        '(?P<Y>\d{4,})-' r'(?P<M>\d\d)-' r'(?P<D>\d\d)' \
+                        r'(?P<Y>\d{4,})-' r'(?P<M>\d\d)-' r'(?P<D>\d\d)' \
                         r'(?P<tz>Z|([-+]\d\d:\d\d))?' '$')
     tag, format = 'date', '%(Y)04d-%(M)02d-%(D)02dZ'
     type = (SCHEMA.XSD3, 'date')
@@ -261,7 +261,7 @@ class gYearMonth(Gregorian):
     '''
     parselist = [ (None,'gYearMonth') ]
     lex_pattern = re.compile('^' r'(?P<neg>-?)' \
-                        '(?P<Y>\d{4,})-' r'(?P<M>\d\d)' \
+                        r'(?P<Y>\d{4,})-' r'(?P<M>\d\d)' \
                         r'(?P<tz>Z|([-+]\d\d:\d\d))?' '$')
     tag, format = 'gYearMonth', '%(Y)04d-%(M)02dZ'
     type = (SCHEMA.XSD3, 'gYearMonth')
@@ -271,7 +271,7 @@ class gYear(Gregorian):
     '''
     parselist = [ (None,'gYear') ]
     lex_pattern = re.compile('^' r'(?P<neg>-?)' \
-                        '(?P<Y>\d{4,})' \
+                        r'(?P<Y>\d{4,})' \
                         r'(?P<tz>Z|([-+]\d\d:\d\d))?' '$')
     tag, format = 'gYear', '%(Y)04dZ'
     type = (SCHEMA.XSD3, 'gYear')

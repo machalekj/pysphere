@@ -41,7 +41,7 @@ class VIManagedEntity(object):
     def rename(self, new_name, sync_run=True):
         """
         Renames this managed entity.
-          * new_name: Any / (slash), \ (backslash), character used in this name
+          * new_name: Any / (slash), \\ (backslash), character used in this name
             element will be escaped. Similarly, any % (percent) character used
             in this name element will be escaped, unless it is used to start an
             escape sequence. A slash is escaped as %2F or %2f. A backslash is
